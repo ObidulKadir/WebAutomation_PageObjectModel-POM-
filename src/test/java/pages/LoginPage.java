@@ -13,10 +13,13 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.observer.entity.MediaEntity;
 
 import BaseDrivers.PageDriver;
+import utility.ExcelUtilis;
 import utility.GetScreenShot;
 
 public class LoginPage {
 	private ExtentTest test;
+	
+	ExcelUtilis excelData = new ExcelUtilis();
 
 	public LoginPage(ExtentTest test) {
 		PageFactory.initElements(PageDriver.getCurrentDriver(), this);
@@ -47,16 +50,17 @@ public class LoginPage {
 	}
 	
 	public void login() throws InterruptedException, IOException	{	
+		excelData.ReadExcel();
 		try {
 			test.info("Please enter username");
 			if(username.isDisplayed()) {
-				username.sendKeys("Admin");
+				username.sendKeys(excelData.username);
 				passCase("Username entered");
 			}
 				try {
 					test.info("Please enter password");
 					if(password.isDisplayed()) {
-						password.sendKeys("admin123");
+						password.sendKeys(excelData.password);
 						passCase("Password entered");
 				} 
 					try {
