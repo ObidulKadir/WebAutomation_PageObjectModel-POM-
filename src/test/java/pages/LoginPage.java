@@ -38,6 +38,7 @@ public class LoginPage {
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement loginButton;
 	
+
 	public void failCase(String message, String scName) throws IOException {
 		test.fail(
 				"<p style=\"color:#FF5353; font-size:13px\"><b>"+message+"</b></p>");
@@ -49,6 +50,7 @@ public class LoginPage {
 		PageDriver.getCurrentDriver().quit();
 	}
 	
+	@SuppressWarnings("static-access")
 	public void login() throws InterruptedException, IOException	{	
 		excelData.ReadExcel();
 		try {
