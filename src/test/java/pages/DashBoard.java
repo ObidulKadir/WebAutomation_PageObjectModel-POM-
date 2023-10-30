@@ -15,26 +15,20 @@ import com.aventstack.extentreports.observer.entity.MediaEntity;
 import BaseDrivers.PageDriver;
 import utility.GetScreenShot;
 
-public class LoginPage {
+public class DashBoard {
 	private ExtentTest test;
 
-	public LoginPage(ExtentTest test) {
+	public DashBoard(ExtentTest test) {
 		PageFactory.initElements(PageDriver.getCurrentDriver(), this);
 		this.test = test;
 	}
 	
-	@FindBys({
-		@FindBy(xpath = "//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/div[1]/div[1]/div[2]/input[1]"),
-		@FindBy(xpath = "//input[@name=\"username\"]") })
+	// locate the elements.
 	
-	WebElement username;
+	@FindBy(xpath="//body/div[@id='app']/div[1]/div[1]/aside[1]/nav[1]/div[2]/ul[1]/li[1]/a[1]")
+	WebElement admin;
 	
-	@FindBy(xpath="//input[@name='password']")
-	WebElement password;
-	
-	@FindBy(xpath = "//button[@type='submit']")
-	WebElement loginButton;
-	
+	// if case has been failed, this method will run and generate ss.
 	public void failCase(String message, String scName) throws IOException {
 		test.fail(
 				"<p style=\"color:#FF5353; font-size:13px\"><b>"+message+"</b></p>");
@@ -46,43 +40,22 @@ public class LoginPage {
 		PageDriver.getCurrentDriver().quit();
 	}
 	
-	public void login() throws InterruptedException, IOException	{	
+	public void admin() throws InterruptedException, IOException	{	
 		try {
-			test.info("Please enter username");
-			if(username.isDisplayed()) {
-				username.sendKeys("Admin");
-				passCase("Username entered");
+			test.info("Click on the admin.");
+			if(admin.isDisplayed()) {
+				admin.click();
+				Thread.sleep(3000);
+				passCaseWithSC("Clicked on the admin layer.", "adminPass");
 			}
-				try {
-					test.info("Please enter password");
-					if(password.isDisplayed()) {
-						password.sendKeys("admin123");
-						passCase("Password entered");
-				} 
-					try {
-						test.info("Please click on the login button.");
-							if(loginButton.isDisplayed()) {
-								loginButton.click();
-								Thread.sleep(3000);
-								passCaseWithSC("Login Sucessfull", "loginPass");
-						} 
-					}
-					catch (Exception e) {
-						failCase("Login button was not locateable, pls check the error message.", "loginbuttonfail");
-					}
-						
-				}
-				catch (Exception e) {
-					failCase("Password field was not locateable, pls check the error message.", "passowrdfail");
-				}
 			
-			}
-			catch (Exception e) {
-				failCase("username field was not locateable, pls check the error message.", "usernamefail");
-				
-			}
+		} catch (Exception e) {
+			failCase("Admin layer was not locate able, pls try again!!", "adminFail");
+		}
 	}
-
+	
+	
+	// if case has been pass but wants ss with the action.
 	private void passCaseWithSC(String message, String scName) throws IOException {
 		test.pass("<p style=\"color:#85BC63; font-size:13px\"><b>"+message+"</b></p>");
 		String screenShotPath = GetScreenShot.capture(PageDriver.getCurrentDriver(), ""+scName+"");
@@ -90,7 +63,8 @@ public class LoginPage {
 		test.pass(MediaEntityBuilder.createScreenCaptureFromPath(dest).build());
 		
 	}
-
+	
+	// if only pass the cases then this method will run and generate a message.
 	private void passCase(String message) {
 		test.pass("<p style=\"color:#85BC63; font-size:13px\"><b>"+message+"</b></p>");
 		

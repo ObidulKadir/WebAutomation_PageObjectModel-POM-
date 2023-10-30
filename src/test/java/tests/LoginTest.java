@@ -24,7 +24,7 @@ public class LoginTest extends BaseDriver{
 	public void start() throws InterruptedException {
 		PageDriver.getCurrentDriver().get(url);
 //		System.out.println("beforeclass");
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		report = ExtentFactory.getInstance();
 		parentTest = report.createTest("<p style = \"color:#FF600; font-size:20px\"><b>ORANGE HRM LOGIN</b></p>").assignAuthor("QA TEAM").assignDevice("Windows");
 		

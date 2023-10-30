@@ -1,33 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-25T15:39:33Z" name="Default suite" finished-at="2023-10-25T15:40:00Z" duration-ms="27223">
+  <suite started-at="2023-10-30T13:41:31Z" name="ORANGE" finished-at="2023-10-30T13:43:40Z" duration-ms="128986">
     <groups>
     </groups>
-    <test started-at="2023-10-25T15:39:33Z" name="Default test" finished-at="2023-10-25T15:40:00Z" duration-ms="27223">
+    <test started-at="2023-10-30T13:41:31Z" name="Test" finished-at="2023-10-30T13:43:09Z" duration-ms="98059">
       <class name="tests.LoginTest">
-        <test-method is-config="true" signature="StartBrowser()[pri:0, instance:tests.LoginTest@3e6104fc]" started-at="2023-10-25T21:39:32Z" name="StartBrowser" finished-at="2023-10-25T21:39:33Z" duration-ms="1165" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- StartBrowser -->
-        <test-method is-config="true" signature="start()[pri:0, instance:tests.LoginTest@3e6104fc]" started-at="2023-10-25T21:39:33Z" name="start" finished-at="2023-10-25T21:39:59Z" duration-ms="26415" status="PASS">
+        <test-method is-config="true" signature="start()[pri:0, instance:tests.LoginTest@69fb6037]" started-at="2023-10-30T19:41:31Z" name="start" finished-at="2023-10-30T19:43:05Z" duration-ms="94274" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- start -->
-        <test-method signature="loginTest()[pri:0, instance:tests.LoginTest@3e6104fc]" started-at="2023-10-25T21:39:59Z" name="loginTest" finished-at="2023-10-25T21:40:00Z" duration-ms="507" status="PASS">
+        <test-method signature="loginTest()[pri:0, instance:tests.LoginTest@69fb6037]" started-at="2023-10-30T19:43:05Z" name="loginTest" finished-at="2023-10-30T19:43:09Z" duration-ms="3511" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="report()[pri:0, instance:tests.LoginTest@3e6104fc]" started-at="2023-10-25T21:40:00Z" name="report" finished-at="2023-10-25T21:40:00Z" duration-ms="289" status="PASS">
+        <test-method is-config="true" signature="report()[pri:0, instance:tests.LoginTest@69fb6037]" started-at="2023-10-30T19:43:09Z" name="report" finished-at="2023-10-30T19:43:09Z" duration-ms="261" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- report -->
-        <test-method is-config="true" signature="CloseBrowser()[pri:0, instance:tests.LoginTest@3e6104fc]" started-at="2023-10-25T21:40:00Z" name="CloseBrowser" finished-at="2023-10-25T21:40:00Z" duration-ms="1" status="PASS">
+      </class> <!-- tests.LoginTest -->
+    </test> <!-- Test -->
+    <test started-at="2023-10-30T13:43:09Z" name="Test1" finished-at="2023-10-30T13:43:13Z" duration-ms="4050">
+      <class name="tests.DashBoardTest">
+        <test-method is-config="true" signature="start()[pri:0, instance:tests.DashBoardTest@5939a379]" started-at="2023-10-30T19:43:09Z" name="start" finished-at="2023-10-30T19:43:09Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- start -->
+        <test-method signature="adminTest()[pri:0, instance:tests.DashBoardTest@5939a379]" started-at="2023-10-30T19:43:09Z" name="adminTest" finished-at="2023-10-30T19:43:13Z" duration-ms="3980" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminTest -->
+        <test-method is-config="true" signature="report()[pri:0, instance:tests.DashBoardTest@5939a379]" started-at="2023-10-30T19:43:13Z" name="report" finished-at="2023-10-30T19:43:13Z" duration-ms="67" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- report -->
+      </class> <!-- tests.DashBoardTest -->
+    </test> <!-- Test1 -->
+    <test started-at="2023-10-30T13:43:13Z" name="Test2" finished-at="2023-10-30T13:43:40Z" duration-ms="26856">
+      <class name="tests.DashBoardTest">
+        <test-method is-config="true" signature="StartBrowser()[pri:0, instance:tests.DashBoardTest@5939a379]" started-at="2023-10-30T19:41:29Z" name="StartBrowser" finished-at="2023-10-30T19:41:31Z" duration-ms="2541" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- StartBrowser -->
+        <test-method is-config="true" signature="CloseBrowser()[pri:0, instance:tests.DashBoardTest@5939a379]" started-at="2023-10-30T19:43:40Z" name="CloseBrowser" finished-at="2023-10-30T19:43:40Z" duration-ms="189" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CloseBrowser -->
-      </class> <!-- tests.LoginTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- tests.DashBoardTest -->
+      <class name="tests.adminTest">
+        <test-method signature="adminInnerTest()[pri:0, instance:tests.adminTest@29647f75]" started-at="2023-10-30T19:43:13Z" name="adminInnerTest" finished-at="2023-10-30T19:43:40Z" duration-ms="26762" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminInnerTest -->
+        <test-method is-config="true" signature="start()[pri:0, instance:tests.adminTest@29647f75]" started-at="2023-10-30T19:43:13Z" name="start" finished-at="2023-10-30T19:43:13Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- start -->
+        <test-method is-config="true" signature="report()[pri:0, instance:tests.adminTest@29647f75]" started-at="2023-10-30T19:43:40Z" name="report" finished-at="2023-10-30T19:43:40Z" duration-ms="92" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- report -->
+      </class> <!-- tests.adminTest -->
+    </test> <!-- Test2 -->
+  </suite> <!-- ORANGE -->
 </testng-results>
